@@ -1,0 +1,36 @@
+img {
+    display: flex;
+    align-self: center;
+}
+
+ion-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+ion-card-header {
+    margin-top: -70px;
+}
+
+.attributes-container {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+
+p {
+    font-size: large;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+}
+.attribute{
+    text-align: right;
+    margin-left: auto;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}

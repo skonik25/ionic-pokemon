@@ -1,0 +1,27 @@
+<ion-card>
+  <img [src]="pokemon.sprite" width="200" height="200" />
+  <ion-card-header>
+    <ion-card-title>{{pokemon.name}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div class="attributes-container">
+      <div class="row">
+        <p>ID:</p>
+        <p class="attribute">{{pokemon.id}}</p>
+      </div>
+      <div class="row">
+        <p>Height:</p>
+        <p class="attribute">{{pokemon.height}}</p>
+      </div>
+      <div class="row">
+        <p>Weight:</p>
+        <p class="attribute">{{pokemon.weight}}</p>
+      </div>
+      <div class="row">
+        <p>Base Experience:</p>
+        <p class="attribute">{{pokemon.baseExperience}}</p>
+      </div>
+    </div>
+  </ion-card-content>
+</ion-card>
