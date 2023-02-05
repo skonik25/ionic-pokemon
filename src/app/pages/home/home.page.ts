@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from 'src/app/pokemons/components/pokemon-card/pokemon.model';
-import { PokemonService } from 'src/app/pokemons/services/pokemon.service';
+import { Store } from '@ngrx/store';
+import { fetchPokemonData, sayHello, } from 'src/app/pokemons/store/pokemon.actions';
+import { AppState, } from 'src/app/pokemons/store/pokemon.reducers';
+import { selectAllPokemons } from 'src/app/pokemons/store/pokemon.selector';
 
 @Component({
   selector: 'app-home',
@@ -8,19 +10,13 @@ import { PokemonService } from 'src/app/pokemons/services/pokemon.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  pokemon: Pokemon = {
-    id: 7,
-    height: 12,
-    weight: 17,
-    sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-    baseExperience: 66,
-    name: "Ditto",
-  }
-  constructor(private readonly pokemonService: PokemonService) {
+  pokemons$ = this.store.select(selectAllPokemons);
+  constructor(private store: Store<AppState>) {
+    this.store.dispatch(fetchPokemonData());
   }
 
   ngOnInit() {
-    this.pokemonService.getPokemons().subscribe(x => console.log(x));
+
   }
 
 }

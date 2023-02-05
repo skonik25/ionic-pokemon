@@ -15,7 +15,6 @@ import { PokemonCardComponent } from 'src/app/pokemons/components/pokemon-card/p
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    
   ],
   declarations: [HomePage, PokemonCardComponent],
 })

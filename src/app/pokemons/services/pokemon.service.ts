@@ -9,7 +9,7 @@ import { switchMap, map, mergeMap } from 'rxjs';
 })
 export class PokemonService {
 
-  constructor(private readonly http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getPokemons() {
     return this.http.get<PokemonPreview>('https://pokeapi.co/api/v2/pokemon?limit=5&offset=0').pipe(

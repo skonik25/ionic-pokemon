@@ -5,5 +5,5 @@
 </ion-header>
 
 <ion-content>
-  <pokemon-card [pokemon]="pokemon"></pokemon-card>
+  <pokemon-card *ngFor="let pokemon of pokemons$ | async" [pokemon]="pokemon"></pokemon-card>
 </ion-content>
