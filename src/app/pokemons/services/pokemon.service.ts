@@ -11,8 +11,8 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemons() {
-    return this.http.get<PokemonPreview>('https://pokeapi.co/api/v2/pokemon?limit=5&offset=0').pipe(
+  getPokemons(offset:number = 0) {
+    return this.http.get<PokemonPreview>(`https://pokeapi.co/api/v2/pokemon?limit=5&offset=${offset}`).pipe(
       switchMap(value => value.results),
       mergeMap(value => this.http.get<RootObject>(value.url)),
       map(value => transform(value))

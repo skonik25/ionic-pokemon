@@ -9,8 +9,8 @@ export class PokemonEffects {
 
     pokemons$ = createEffect(() => this.actions$.pipe(
         ofType(fetchPokemonData),
-        switchMap(() =>
-            from(this.pokemonService.getPokemons().pipe(
+        switchMap(({offset}) =>
+            from(this.pokemonService.getPokemons(offset).pipe(
                 map(pokemons => fetchPokemonDataSuccess({ pokemons })),
             ))
         )
