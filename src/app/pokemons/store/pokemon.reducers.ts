@@ -14,7 +14,6 @@ const initialState: PokemonState = {
 
 export const pokemonReducer = createReducer(
     initialState,
-    on(fetchPokemonData, (state, action) => ({ ...state })),
     on(fetchPokemonDataSuccess, (state, { pokemons }) => ({ ...state, pokemons: [...state.pokemons, pokemons] })),
     on(sayHello, (state, action) => {
         return { ...state, pokemons: [{ id: 1, name: 'cze', height: 12, weight: 12, baseExperience: 12, sprite: 'cze' }] }
